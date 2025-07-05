@@ -1,0 +1,305 @@
+/* General Body Styles and Resets */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Hero Section --- */
+header {
+    /* UPDATED: Set a positioning context for the overlay */
+    position: relative; 
+    
+    /* UPDATED: Removed the gradient, now only the image is used */
+    background-image: url("img/hero-illustration.jpeg"); 
+
+    /* UPDATED: Makes the image cover the entire header area */
+    background-size: cover; 
+    
+    /* UPDATED: Centers the image in the header */
+    background-position: center center; 
+    
+    color: #fff;
+    padding-bottom: 80px;
+    overflow: hidden; /* Ensures the overlay doesn't spill out */
+}
+
+/* ADDED: This creates the dark overlay for text readability */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* A semi-transparent black. You can adjust the last value (0.4) to make it darker or lighter */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; /* Sits between the background image and the content */
+}
+
+/* ADDED: This places all header content (nav, text, buttons) on top of the overlay */
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9); /* Slightly increased opacity for better reading */
+}
+
+.btn-primary {
+    background-color: #f0c34d;
+    color: #333;
+    padding: 15px 40px;
+    border-radius: 30px;
+}
+
+.hero-image {
+    /* This div is no longer needed to hold a separate image, but we keep it for structure */
+    flex: 1;
+    min-width: 50%; /* Helps maintain the layout balance */
+}
+
+
+/* --- Categories Section --- */
+.categories-section {
+    padding: 80px 0;
+    text-align: left; 
+}
+
+.categories-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-tag {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contact-intro {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form input {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-send {
+    background-color: #a020f0;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* --- Footer Section --- */
+footer {
+    padding: 40px 0 20px 0;
+}
+
+footer hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.footer-column a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #666;
+}
+
+.copyright {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero {
+        text-align: center;
+    }
+    .hero-text p {
+        max-width: 100%;
+    }
+    .hero-image {
+        display: none; /* Hide the empty space on smaller screens */
+    }
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple hiding for mobile, a hamburger menu would be better */
+    }
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contact-form {
+        flex-direction: column;
+    }
+    .contact-form input {
+        width: 100%;
+    }
+}
